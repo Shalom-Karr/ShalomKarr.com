@@ -5,4 +5,4 @@ Disallow: /blog/admin/
 Disallow: /admin.html
 
 # Sitemaps
-Sitemap: https://shalomkarr.pages.dev/sitemap.xml
+Sitemap: https://shalomkarr.com/sitemap.xml

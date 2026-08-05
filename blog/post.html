@@ -14,17 +14,17 @@
        values (and the synchronous bootstrap script below) keep these
        sensible for crawlers that haven't run our async fetch yet. -->
   <meta name="description"        id="seo-description"     content="Writing on code, life, and the web by Shalom Karr.">
-  <link rel="canonical"           id="seo-canonical"       href="https://shalomkarr.pages.dev/blog/">
+  <link rel="canonical"           id="seo-canonical"       href="https://shalomkarr.com/blog/">
   <meta property="og:type"        content="article">
   <meta property="og:site_name"   content="Shalom Karr">
   <meta property="og:title"       id="seo-og-title"        content="Shalom Karr — Blog">
   <meta property="og:description" id="seo-og-description"  content="Writing on code, life, and the web by Shalom Karr.">
-  <meta property="og:url"         id="seo-og-url"          content="https://shalomkarr.pages.dev/blog/">
-  <meta property="og:image"       id="seo-og-image"        content="https://shalomkarr.pages.dev/img/ShalomProfessional.jpg">
+  <meta property="og:url"         id="seo-og-url"          content="https://shalomkarr.com/blog/">
+  <meta property="og:image"       id="seo-og-image"        content="https://shalomkarr.com/img/ShalomProfessional.jpg">
   <meta name="twitter:card"       content="summary_large_image">
   <meta name="twitter:title"      id="seo-tw-title"        content="Shalom Karr — Blog">
   <meta name="twitter:description" id="seo-tw-description" content="Writing on code, life, and the web by Shalom Karr.">
-  <meta name="twitter:image"      id="seo-tw-image"        content="https://shalomkarr.pages.dev/img/ShalomProfessional.jpg">
+  <meta name="twitter:image"      id="seo-tw-image"        content="https://shalomkarr.com/img/ShalomProfessional.jpg">
   <script id="seo-jsonld" type="application/ld+json"></script>
 
   <!-- Synchronous SEO bootstrap. Runs before any other script and before
@@ -55,7 +55,7 @@
     var SITE  = 'Shalom Karr';
     var title = pretty + ' · ' + SITE;
     var desc  = pretty + ' — read the full post on ' + SITE + "'s blog.";
-    var canon = 'https://shalomkarr.pages.dev/blog/post/' + encodeURIComponent(slug);
+    var canon = 'https://shalomkarr.com/blog/post/' + encodeURIComponent(slug);
 
     document.title = title;
     var set = function (id, attr, val) {
@@ -74,9 +74,9 @@
 
   <!-- URL Redirect Check -->
   <script>
-    // Check if current hostname is netlify.app and redirect to pages.dev
+    // Check if current hostname is netlify.app and redirect to the canonical domain
     if (window.location.hostname === 'shalomkarr.netlify.app') {
-      window.location.replace(window.location.href.replace('shalomkarr.netlify.app', 'shalomkarr.pages.dev'));
+      window.location.replace(window.location.href.replace('shalomkarr.netlify.app', 'shalomkarr.com'));
     }
   </script>
 
@@ -290,7 +290,7 @@
     <!-- Left Sidebar -->
     <aside class="glass-panel p-8 flex flex-col items-center lg:items-start text-center lg:text-left lg:sticky lg:top-0 h-auto lg:h-screen lg:overflow-y-auto z-10">
       <a href="/" class="block mb-6 group slide-in-left">
-        <img src="https://shalomkarr.pages.dev/img/ShalomProfessional.jpg" alt="Avatar" class="w-16 h-16 rounded-full object-cover shadow-sm border-2 border-white dark:border-gray-800 group-hover:ring-4 ring-blue-500/30 transition-all site-avatar hover:scale-110">
+        <img src="https://shalomkarr.com/img/ShalomProfessional.jpg" alt="Avatar" class="w-16 h-16 rounded-full object-cover shadow-sm border-2 border-white dark:border-gray-800 group-hover:ring-4 ring-blue-500/30 transition-all site-avatar hover:scale-110">
       </a>
       <h1 class="text-lg font-bold tracking-tight mb-6 slide-in-left site-name" style="transition-delay: 100ms;">Shalom Karr</h1>
 
@@ -398,8 +398,8 @@
            post.excerpt ||
            (post.content_md || '').replace(/[#*_`>\-\[\]()]/g, '').slice(0, 200));
         const desc  = rawDesc.replace(/\s+/g, ' ').trim().slice(0, 200);
-        const canon = `https://shalomkarr.pages.dev/blog/post/${encodeURIComponent(slug)}`;
-        const image = post.image_url || 'https://shalomkarr.pages.dev/img/ShalomProfessional.jpg';
+        const canon = `https://shalomkarr.com/blog/post/${encodeURIComponent(slug)}`;
+        const image = post.image_url || 'https://shalomkarr.com/img/ShalomProfessional.jpg';
 
         document.title = title;
         const setMeta = (id, attr, val) => {
@@ -428,9 +428,9 @@
             'mainEntityOfPage': canon,
             'datePublished': post.created_at || undefined,
             'dateModified':  post.updated_at || post.created_at || undefined,
-            'author':    { '@type': 'Person',       'name': SITE, 'url': 'https://shalomkarr.pages.dev/' },
+            'author':    { '@type': 'Person',       'name': SITE, 'url': 'https://shalomkarr.com/' },
             'publisher': { '@type': 'Organization', 'name': SITE,
-                           'logo': { '@type': 'ImageObject', 'url': 'https://shalomkarr.pages.dev/img/ShalomProfessional.jpg' } },
+                           'logo': { '@type': 'ImageObject', 'url': 'https://shalomkarr.com/img/ShalomProfessional.jpg' } },
             'keywords': (post.tags || []).join(', ') || undefined,
           });
         }

@@ -20,9 +20,14 @@ function xmlEscape(s) {
     .replace(/'/g, '&apos;');
 }
 
+// Always advertise the canonical host, never the host the request arrived on.
+// shalomkarr.pages.dev and every preview deploy run this same Function, and
+// emitting their origins would hand Google a parallel set of URLs that
+// contradict the <link rel="canonical"> on every page.
+const CANONICAL_ORIGIN = 'https://shalomkarr.com';
+
 export async function onRequest(context) {
-  const url    = new URL(context.request.url);
-  const origin = url.origin;
+  const origin = CANONICAL_ORIGIN;
   const today  = new Date().toISOString().slice(0, 10);
 
   const supaUrl = BUILT_URL || context.env.SUPABASE_URL;

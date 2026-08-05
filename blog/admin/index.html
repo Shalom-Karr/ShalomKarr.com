@@ -7,9 +7,9 @@
 
   <!-- URL Redirect Check -->
   <script>
-    // Check if current hostname is netlify.app and redirect to pages.dev
+    // Check if current hostname is netlify.app and redirect to the canonical domain
     if (window.location.hostname === 'shalomkarr.netlify.app') {
-      window.location.replace(window.location.href.replace('shalomkarr.netlify.app', 'shalomkarr.pages.dev'));
+      window.location.replace(window.location.href.replace('shalomkarr.netlify.app', 'shalomkarr.com'));
     }
   </script>
 

@@ -83,7 +83,7 @@
   <g transform="translate(400, 660)" font-family="'Inter', sans-serif" font-size="18" font-weight="500" fill="#8b949e" text-anchor="middle">
     
     <!-- Website -->
-    <text x="0" y="0"><tspan fill="#3b82f6">🌐</tspan> shalomkarr.pages.dev</text>
+    <text x="0" y="0"><tspan fill="#3b82f6">🌐</tspan> shalomkarr.com</text>
     
     <!-- Email -->
     <text x="0" y="40"><tspan fill="#3b82f6">✉️</tspan> shalomkarr@gmail.com</text>

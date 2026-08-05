@@ -9,13 +9,14 @@ const fs = require('fs');
 const path = require('path');
 
 async function generateSitemap() {
-  const baseUrl = 'https://shalomkarr.pages.dev';
+  const baseUrl = 'https://shalomkarr.com';
   const today = new Date().toISOString().split('T')[0];
 
   // Static pages with priority and change frequency
   const staticPages = [
     { url: '/', changefreq: 'monthly', priority: '1.0', lastmod: today },
     { url: '/blog/', changefreq: 'daily', priority: '0.9', lastmod: today },
+    { url: '/blog/about/', changefreq: 'monthly', priority: '0.7', lastmod: today },
     { url: '/blog/contact/', changefreq: 'monthly', priority: '0.7', lastmod: today },
   ];
 
@@ -52,10 +53,12 @@ async function generateSitemap() {
           const lastmod = post.updated_at || post.created_at;
           const formattedDate = new Date(lastmod).toISOString().split('T')[0];
 
+          // Clean path, not ?slug= — this has to match the canonical each
+          // post declares, or the sitemap advertises a duplicate of itself.
           xml += '  <url>\n';
-          xml += `    <loc>${baseUrl}/blog/post.html?slug=${encodeURIComponent(post.slug)}</loc>\n`;
+          xml += `    <loc>${baseUrl}/blog/post/${encodeURIComponent(post.slug)}</loc>\n`;
           xml += `    <lastmod>${formattedDate}</lastmod>\n`;
-          xml += `    <changefreq>weekly</changefreq>\n`;
+          xml += `    <changefreq>monthly</changefreq>\n`;
           xml += `    <priority>0.8</priority>\n`;
           xml += '  </url>\n';
         });

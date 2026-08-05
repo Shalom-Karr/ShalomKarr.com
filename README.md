@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal portfolio website, showcasing my skills, projects, and providing ways to get in touch. The site is designed to be clean, responsive, and highlight my journey as a web developer.
 
-**Live Site:** [https://shalomkarr.pages.dev/](https://shalomkarr.pages.dev)
+**Live Site:** [https://shalomkarr.com/](https://shalomkarr.com)
 
 ## Features
 
