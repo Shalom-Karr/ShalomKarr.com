@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/assets/*",
+    "/favicons/*",
+    "/img/*",
+    "/blog/js/*",
+    "/output.css",
+    "/blog-output.css",
+    "/style.css",
+    "/blog.css",
+    "/tailwind.css",
+    "/script.js",
+    "/analytics.js",
+    "/tracker.js",
+    "/admin.js",
+    "/supabase-client.js",
+    "/favicon.ico",
+    "/robots.txt"
+  ]
+}
